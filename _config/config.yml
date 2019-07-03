@@ -1,0 +1,8 @@
+---
+Name: colorpickerconfig
+---
+SilverStripe\Admin\LeftAndMain:
+  extra_requirements_css:
+    - "silverstripe/colorpicker:client/dist/styles/bundle.css"
+  extra_requirements_javascript:
+    - "silverstripe/colorpicker:client/dist/js/bundle.js"
