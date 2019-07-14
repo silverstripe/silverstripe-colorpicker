@@ -3,7 +3,6 @@
 [![Build Status](https://travis-ci.org/silverstripe/colorpicker.svg?branch=master)](https://travis-ci.org/silverstripe/colorpicker)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/silverstripe/colorpicker/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/silverstripe/colorpicker/?branch=master)
 [![codecov](https://codecov.io/gh/silverstripe/colorpicker/branch/master/graph/badge.svg)](https://codecov.io/gh/silverstripe/colorpicker)
-[![SilverStripe supported module](https://img.shields.io/badge/silverstripe-supported-0071C4.svg)](https://www.silverstripe.org/software/addons/silverstripe-commercially-supported-module-list/)
 
 This module adds a color picker field which can be used anywhere.
 
