@@ -1,10 +1,10 @@
 # Colorpicker Module
 
-[![Build Status](https://travis-ci.org/silverstripe/colorpicker.svg?branch=master)](https://travis-ci.org/silverstripe/colorpicker)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/silverstripe/colorpicker/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/silverstripe/colorpicker/?branch=master)
-[![codecov](https://codecov.io/gh/silverstripe/colorpicker/branch/master/graph/badge.svg)](https://codecov.io/gh/silverstripe/colorpicker)
+[![Build Status](https://travis-ci.org/silverstripe/silverstripe-colorpicker.svg?branch=master)](https://travis-ci.org/silverstripe/silverstripe-colorpicker)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/silverstripe/silverstripe-colorpicker/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/silverstripe/silverstripe-colorpicker/?branch=master)
+[![codecov](https://codecov.io/gh/silverstripe/silverstripe-colorpicker/branch/master/graph/badge.svg)](https://codecov.io/gh/silverstripe/silverstripe-colorpicker)
 
-This module adds a color picker field which can be used anywhere.
+This module adds a color picker field which can be used anywhere in the CMS.
 
 In order to keep the site accessible, custom color selection is not implemented.
 
@@ -18,31 +18,15 @@ composer require silverstripe/colorpicker
 
 ## Usage
 
-To add a `ColorPickerField` to a `DataObject`, you can write the following in a `DataExtension`:
+You can use the `ColorPickerField` as follows:
 
 ```php
-    private static $colors = [
-        'red' => [
-            'Title' => 'Red',
-            'CSSClass' => 'red',
-            'Color' => '#E51016',
-        ],
-        'blue' => [
-            'Title' => 'Blue',
-            'CSSClass' => 'blue',
-            'Color' => '#1F6BFE',
-        ],
-        'green' => [
-            'Title' => 'Green',
-            'CSSClass' => 'green',
-            'Color' => '#298436',
-        ]
-    ];
-
-    public function updateCMSFields(FieldList $fields)
+    public function getCMSFields()
     {
+        $fields = parent::getCMSFields();
+
         $fields->addFieldsToTab(
-            'Root.ThemeOptions',
+            'Root.Main',
             [
                 ColorPickerField::create(
                     'MyColorField',
@@ -50,12 +34,28 @@ To add a `ColorPickerField` to a `DataObject`, you can write the following in a 
                         __CLASS__ . '.MyColorField',
                         'My Color Field'
                     ),
-                    $colors
+                    [
+                        [
+                            'Title' => 'Red',
+                            'CSSClass' => 'red',
+                            'Color' => '#E51016',
+                        ],
+                        [
+                            'Title' => 'Blue',
+                            'CSSClass' => 'blue',
+                            'Color' => '#1F6BFE',
+                        ],
+                        [
+                            'Title' => 'Green',
+                            'CSSClass' => 'green',
+                            'Color' => '#298436',
+                        ]
+                    ]
                 )
             ]
         );
 
-        return $this;
+        return $fields;
     }
 ```
 

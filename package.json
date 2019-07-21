@@ -1,7 +1,7 @@
 {
-  "name": "colorpicker",
+  "name": "@silverstripe/colorpicker",
   "version": "1.0.0",
-  "description": "Color picker module for the site available under admin settings",
+  "description": "Color picker field for selecting a color value in the SilverStripe CMS",
   "scripts": {
     "build": "yarn && yarn lint && NODE_ENV=production webpack -p --bail --progress",
     "watch": "yarn && NODE_ENV=development webpack --watch --progress",
@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/silverstripe/colorpicker.git"
+    "url": "git+https://github.com/silverstripe/silverstripe-colorpicker.git"
   },
   "author": "SilverStripe",
   "license": "BSD-3-Clause",
