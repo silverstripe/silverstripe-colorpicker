@@ -1,6 +1,6 @@
 <?php
 
-namespace SilverStripe\Fontpicker\Tests\Forms;
+namespace SilverStripe\Colorpicker\Tests\Forms;
 
 use SilverStripe\Colorpicker\Forms\ColorPickerField;
 use SilverStripe\Dev\SapphireTest;
