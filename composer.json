@@ -15,7 +15,8 @@
     },
     "autoload": {
         "psr-4": {
-            "SilverStripe\\Colorpicker\\": "src/"
+            "SilverStripe\\Colorpicker\\": "src/",
+            "SilverStripe\\Colorpicker\\Tests\\": "tests/"
         }
     },
     "extra": {
