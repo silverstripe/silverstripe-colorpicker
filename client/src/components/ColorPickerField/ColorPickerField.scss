@@ -4,6 +4,7 @@
   min-width: 270px;
   height: 62px;
   display: flex;
+  align-items: center;
 
   &__color-icon {
     width: 40px;
@@ -18,8 +19,11 @@
 }
 
 .color-picker-field-popover {
-  max-width: 380px;
-  width: 380px;
+  .popover {
+    max-width: 100%;
+    width: 380px;
+    overflow: hidden;
+  }
 
   &__option {
     display: flex;
@@ -40,6 +44,7 @@
     width: 40px;
     height: 40px;
     border: 1px solid $border-color-light;
+    margin-right: 0 !important;
   }
 
   &__option-label {
