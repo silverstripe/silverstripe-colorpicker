@@ -3,8 +3,25 @@ inherit: true
 build:
   nodes:
     analysis:
+      environment:
+        php:
+          version: 7.3
+
+      dependencies:
+        before:
+          - php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+          - php composer-setup.php --2 --filename=composer
+          - rm composer-setup.php
+          - export PATH="$PWD:$PATH"
+          - composer config --no-plugins allow-plugins.composer/installers true
+          - composer config --no-plugins allow-plugins.silverstripe/vendor-plugin true
+
       tests:
-        override: [php-scrutinizer-run]
+        override:
+          - export PATH="$PWD:$PATH"
+          - composer config --no-plugins allow-plugins.composer/installers true
+          - composer config --no-plugins allow-plugins.silverstripe/vendor-plugin true
+          - php-scrutinizer-run
 
 checks:
   php:
