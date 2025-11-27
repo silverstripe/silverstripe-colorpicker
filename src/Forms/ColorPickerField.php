@@ -30,4 +30,12 @@ class ColorPickerField extends SingleSelectField
             return $color['CSSClass'];
         }, $this->getSource()));
     }
+
+    /**
+     * Return the value of this field (for SilverStripe 6 compatibility)
+     */
+    public function Value()
+    {
+        return $this->value;
+    }
 }
