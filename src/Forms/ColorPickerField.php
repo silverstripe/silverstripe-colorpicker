@@ -44,4 +44,12 @@ class ColorPickerField extends SingleSelectField
 
         return $schema . $hidden;
     }
+  
+    /**
+     * Return the value of this field (for SilverStripe 6 compatibility)
+     */
+    public function Value()
+    {
+        return $this->value;
+    }
 }
