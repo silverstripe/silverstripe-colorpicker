@@ -31,6 +31,20 @@ class ColorPickerField extends SingleSelectField
         }, $this->getSource()));
     }
 
+    public function Field($properties = [])
+    {
+        // Prevent false “unsaved changes” warnings in the CMS by rendering
+        // a hidden input immediately. This ensures the field value is present
+        // in the initial DOM snapshot before React mounts.
+        $schema = parent::Field($properties);
+
+        $name = $this->getName();
+        $value = htmlspecialchars($this->Value() ?? '', ENT_QUOTES);
+        $hidden = "<input type=\"hidden\" name=\"{$name}\" value=\"{$value}\" />";
+
+        return $schema . $hidden;
+    }
+  
     /**
      * Return the value of this field (for SilverStripe 6 compatibility)
      */
